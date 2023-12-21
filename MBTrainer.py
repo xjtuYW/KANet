@@ -10,19 +10,8 @@ from torch.utils.tensorboard import SummaryWriter
 
 import pdb
 
-"""
-# note: the parameters of self.mode.fc are updated by the encoded feature, 
-#       thus we treat the parameter as general knowledge.
 
-#       the parameters of self.mode.heads_vis are learned from differenet classes, 
-#       thus we treat the parameter as class specific knowledge. 
-
-if use text info, then there are two choices, using text prompts or not
-if use visul info, then the only choice is whether use prompt
-
-"""
-
-class MBTrainer():
+class KANetTrainer():
     def __init__(self, args):
         self.args       = args
         self.device     = "cuda" if torch.cuda.is_available() else "cpu"
